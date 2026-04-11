@@ -2,88 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 30 25% 98%;
-    --foreground: 20 20% 12%;
+    --background: 210 20% 98%;
+    --foreground: 220 25% 10%;
 
-    --card: 30 20% 99%;
-    --card-foreground: 20 20% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
 
-    --popover: 30 20% 99%;
-    --popover-foreground: 20 20% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
 
-    --primary: 350 65% 52%;
+    --primary: 220 72% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 30% 94%;
-    --secondary-foreground: 20 20% 20%;
+    --secondary: 210 25% 93%;
+    --secondary-foreground: 220 25% 15%;
 
-    --muted: 30 15% 94%;
-    --muted-foreground: 20 10% 45%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 38 90% 55%;
-    --accent-foreground: 20 20% 12%;
+    --accent: 152 55% 42%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 15% 90%;
-    --input: 30 15% 88%;
-    --ring: 350 65% 52%;
+    --border: 214 20% 90%;
+    --input: 214 20% 88%;
+    --ring: 220 72% 45%;
 
-    --radius: 0.75rem;
+    --radius: 0.625rem;
 
-    --sidebar-background: 30 20% 97%;
-    --sidebar-foreground: 20 20% 20%;
-    --sidebar-primary: 350 65% 52%;
+    --sidebar-background: 220 25% 12%;
+    --sidebar-foreground: 210 20% 92%;
+    --sidebar-primary: 220 72% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 30 20% 94%;
-    --sidebar-accent-foreground: 20 20% 20%;
-    --sidebar-border: 30 15% 90%;
-    --sidebar-ring: 350 65% 52%;
+    --sidebar-accent: 220 20% 20%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 220 15% 22%;
+    --sidebar-ring: 220 72% 55%;
 
-    /* Custom tokens */
-    --fashion-rose: 350 65% 52%;
-    --fashion-gold: 38 90% 55%;
-    --fashion-blush: 350 40% 95%;
-    --fashion-cream: 35 40% 96%;
-    --fashion-charcoal: 20 20% 15%;
+    /* Custom civic tokens */
+    --civic-blue: 220 72% 45%;
+    --civic-blue-light: 220 72% 95%;
+    --civic-green: 152 55% 42%;
+    --civic-green-light: 152 40% 94%;
+    --civic-orange: 28 85% 55%;
+    --civic-orange-light: 28 80% 95%;
+    --civic-navy: 220 40% 15%;
+    --civic-slate: 215 15% 50%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(350 65% 52%) 0%, hsl(38 90% 55%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(30 20% 99%) 0%, hsl(350 40% 98%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(350 65% 52%) 0%, hsl(350 50% 65%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 72% 45%) 0%, hsl(220 60% 35%) 50%, hsl(152 55% 42%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 72% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(152 55% 42%) 0%, hsl(152 45% 50%) 100%);
 
-    --shadow-soft: 0 4px 20px -4px hsl(350 65% 52% / 0.1);
-    --shadow-card: 0 8px 30px -8px hsl(20 20% 12% / 0.08);
-    --shadow-elevated: 0 20px 60px -15px hsl(20 20% 12% / 0.12);
+    --shadow-soft: 0 2px 12px -2px hsl(220 72% 45% / 0.08);
+    --shadow-card: 0 4px 24px -6px hsl(220 25% 10% / 0.06);
+    --shadow-elevated: 0 12px 40px -10px hsl(220 25% 10% / 0.1);
 
-    --font-display: 'Playfair Display', serif;
+    --font-display: 'Plus Jakarta Sans', sans-serif;
     --font-body: 'Inter', sans-serif;
   }
 
   .dark {
-    --background: 20 20% 8%;
-    --foreground: 30 15% 92%;
-    --card: 20 18% 12%;
-    --card-foreground: 30 15% 92%;
-    --popover: 20 18% 12%;
-    --popover-foreground: 30 15% 92%;
-    --primary: 350 65% 58%;
+    --background: 220 25% 7%;
+    --foreground: 210 20% 92%;
+    --card: 220 22% 11%;
+    --card-foreground: 210 20% 92%;
+    --popover: 220 22% 11%;
+    --popover-foreground: 210 20% 92%;
+    --primary: 220 72% 55%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 20 15% 18%;
-    --secondary-foreground: 30 15% 92%;
-    --muted: 20 12% 20%;
-    --muted-foreground: 30 10% 60%;
-    --accent: 38 80% 50%;
+    --secondary: 220 18% 16%;
+    --secondary-foreground: 210 20% 92%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 215 12% 55%;
+    --accent: 152 50% 45%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
-    --border: 20 12% 22%;
-    --input: 20 12% 22%;
-    --ring: 350 65% 58%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 220 72% 55%;
   }
 }
 
@@ -106,16 +109,19 @@
     background-image: var(--gradient-hero);
   }
   .glass {
-    @apply backdrop-blur-md bg-background/80 border border-border/50;
+    @apply backdrop-blur-md bg-background/85 border-b border-border/50;
   }
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-[var(--shadow-elevated)] hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-[var(--shadow-elevated)] hover:-translate-y-0.5;
   }
   .animate-fade-up {
     animation: fadeUp 0.6s ease-out forwards;
   }
   .animate-fade-in {
     animation: fadeIn 0.5s ease-out forwards;
+  }
+  .civic-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold;
   }
 }
 
