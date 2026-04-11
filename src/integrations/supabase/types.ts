@@ -14,7 +14,226 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      notifications: {
+        Row: {
+          created_at: string
+          id: string
+          is_read: boolean | null
+          message: string
+          title: string
+          type: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_read?: boolean | null
+          message: string
+          title: string
+          type?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_read?: boolean | null
+          message?: string
+          title?: string
+          type?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      recommendations: {
+        Row: {
+          created_at: string
+          eligibility_status: string
+          explanation: string | null
+          id: string
+          match_percentage: number
+          missing_criteria: string[] | null
+          query_text: string | null
+          scheme_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          eligibility_status?: string
+          explanation?: string | null
+          id?: string
+          match_percentage?: number
+          missing_criteria?: string[] | null
+          query_text?: string | null
+          scheme_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          eligibility_status?: string
+          explanation?: string | null
+          id?: string
+          match_percentage?: number
+          missing_criteria?: string[] | null
+          query_text?: string | null
+          scheme_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "recommendations_scheme_id_fkey"
+            columns: ["scheme_id"]
+            isOneToOne: false
+            referencedRelation: "schemes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      saved_schemes: {
+        Row: {
+          created_at: string
+          id: string
+          scheme_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          scheme_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          scheme_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "saved_schemes_scheme_id_fkey"
+            columns: ["scheme_id"]
+            isOneToOne: false
+            referencedRelation: "schemes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      schemes: {
+        Row: {
+          benefits: string
+          category: string
+          created_at: string
+          deadline: string | null
+          description: string | null
+          documents_required: string[] | null
+          education_level: string | null
+          gender: string | null
+          id: string
+          income_limit: number | null
+          is_active: boolean | null
+          max_age: number | null
+          min_age: number | null
+          occupation: string | null
+          official_link: string | null
+          scheme_name: string
+          state: string | null
+          target_group: string
+          updated_at: string
+        }
+        Insert: {
+          benefits: string
+          category: string
+          created_at?: string
+          deadline?: string | null
+          description?: string | null
+          documents_required?: string[] | null
+          education_level?: string | null
+          gender?: string | null
+          id?: string
+          income_limit?: number | null
+          is_active?: boolean | null
+          max_age?: number | null
+          min_age?: number | null
+          occupation?: string | null
+          official_link?: string | null
+          scheme_name: string
+          state?: string | null
+          target_group: string
+          updated_at?: string
+        }
+        Update: {
+          benefits?: string
+          category?: string
+          created_at?: string
+          deadline?: string | null
+          description?: string | null
+          documents_required?: string[] | null
+          education_level?: string | null
+          gender?: string | null
+          id?: string
+          income_limit?: number | null
+          is_active?: boolean | null
+          max_age?: number | null
+          min_age?: number | null
+          occupation?: string | null
+          official_link?: string | null
+          scheme_name?: string
+          state?: string | null
+          target_group?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      user_profiles: {
+        Row: {
+          age: number | null
+          category: string | null
+          created_at: string
+          district: string | null
+          education_level: string | null
+          full_name: string | null
+          gender: string | null
+          goals: string[] | null
+          id: string
+          income: number | null
+          occupation: string | null
+          state: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          age?: number | null
+          category?: string | null
+          created_at?: string
+          district?: string | null
+          education_level?: string | null
+          full_name?: string | null
+          gender?: string | null
+          goals?: string[] | null
+          id?: string
+          income?: number | null
+          occupation?: string | null
+          state?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          age?: number | null
+          category?: string | null
+          created_at?: string
+          district?: string | null
+          education_level?: string | null
+          full_name?: string | null
+          gender?: string | null
+          goals?: string[] | null
+          id?: string
+          income?: number | null
+          occupation?: string | null
+          state?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
