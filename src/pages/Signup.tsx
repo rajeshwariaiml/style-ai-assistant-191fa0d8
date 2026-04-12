@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Shield } from "lucide-react";
+import { Shield, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
@@ -15,17 +15,48 @@ const Signup = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
 
+  const validateForm = (): string | null => {
+    if (!fullName.trim()) return "Please enter your full name.";
+    if (!email.trim()) return "Please enter your email address.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return "Please enter a valid email address.";
+    if (password.length < 6) return "Password must be at least 6 characters.";
+    if (!/[A-Z]/.test(password)) return "Password must contain at least one uppercase letter.";
+    if (!/[0-9]/.test(password)) return "Password must contain at least one number.";
+    return null;
+  };
+
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (password.length < 6) { toast({ title: "Password must be at least 6 characters", variant: "destructive" }); return; }
+    const validationError = validateForm();
+    if (validationError) {
+      toast({ title: "Validation Error", description: validationError, variant: "destructive" });
+      return;
+    }
     setLoading(true);
-    const { error } = await supabase.auth.signUp({
-      email, password,
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
       options: { data: { full_name: fullName }, emailRedirectTo: window.location.origin },
     });
     setLoading(false);
-    if (error) toast({ title: "Signup failed", description: error.message, variant: "destructive" });
-    else { toast({ title: "Account created!", description: "Check your email to verify." }); navigate("/login"); }
+
+    if (error) {
+      let description = error.message;
+      if (error.message.includes("already registered") || error.message.includes("already exists")) {
+        description = "An account with this email already exists. Please sign in instead.";
+      }
+      toast({ title: "Signup Failed", description, variant: "destructive" });
+      return;
+    }
+
+    if (data?.user) {
+      toast({
+        title: "🎉 Account Created Successfully!",
+        description: `Welcome, ${fullName}! Redirecting to your dashboard...`,
+      });
+      // Auto-confirm is enabled so user is logged in immediately
+      setTimeout(() => navigate("/dashboard"), 1200);
+    }
   };
 
   return (
@@ -53,8 +84,12 @@ const Signup = () => {
           <div className="space-y-2">
             <Label htmlFor="password">Password</Label>
             <Input id="password" type="password" placeholder="••••••••" value={password} onChange={e => setPassword(e.target.value)} required />
+            <p className="text-xs text-muted-foreground">Min 6 chars, 1 uppercase, 1 number</p>
           </div>
-          <Button type="submit" disabled={loading} className="w-full">{loading ? "Creating..." : "Sign Up"}</Button>
+          <Button type="submit" disabled={loading} className="w-full gap-2">
+            {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <CheckCircle2 className="h-4 w-4" />}
+            {loading ? "Creating Account..." : "Sign Up"}
+          </Button>
         </form>
         <p className="text-center text-sm text-muted-foreground mt-6">
           Already have an account? <Link to="/login" className="text-primary font-medium hover:underline">Sign In</Link>

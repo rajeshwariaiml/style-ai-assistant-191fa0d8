@@ -3,12 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Shield, Menu, X, User, LogOut, Bell } from "lucide-react";
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 import type { User as SupaUser } from "@supabase/supabase-js";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [user, setUser] = useState<SupaUser | null>(null);
   const navigate = useNavigate();
+  const { toast } = useToast();
 
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -18,8 +20,11 @@ const Navbar = () => {
     return () => subscription.unsubscribe();
   }, []);
 
+  const displayName = user?.user_metadata?.full_name || user?.email?.split("@")[0] || "";
+
   const handleLogout = async () => {
     await supabase.auth.signOut();
+    toast({ title: "Logged out successfully", description: "See you next time!" });
     navigate("/");
   };
 
@@ -55,9 +60,14 @@ const Navbar = () => {
                 <Button variant="ghost" size="sm"><Bell className="h-4 w-4" /></Button>
               </Link>
               <Link to="/dashboard">
-                <Button variant="ghost" size="sm"><User className="h-4 w-4 mr-1" /> Profile</Button>
+                <Button variant="ghost" size="sm" className="gap-1.5">
+                  <User className="h-4 w-4" />
+                  <span className="max-w-[120px] truncate">{displayName}</span>
+                </Button>
               </Link>
-              <Button variant="outline" size="sm" onClick={handleLogout}><LogOut className="h-4 w-4 mr-1" /> Logout</Button>
+              <Button variant="outline" size="sm" onClick={handleLogout} className="gap-1.5">
+                <LogOut className="h-4 w-4" /> Logout
+              </Button>
             </>
           ) : (
             <>
@@ -79,7 +89,10 @@ const Navbar = () => {
               <Link key={l.to} to={l.to} className="text-sm py-2 font-medium" onClick={() => setMobileOpen(false)}>{l.label}</Link>
             ))}
             {user ? (
-              <Button variant="outline" size="sm" onClick={() => { handleLogout(); setMobileOpen(false); }}>Logout</Button>
+              <>
+                <p className="text-xs text-muted-foreground py-1">Signed in as <strong>{displayName}</strong></p>
+                <Button variant="outline" size="sm" onClick={() => { handleLogout(); setMobileOpen(false); }}>Logout</Button>
+              </>
             ) : (
               <div className="flex gap-2 pt-2">
                 <Link to="/login" className="flex-1"><Button variant="ghost" size="sm" className="w-full">Login</Button></Link>
