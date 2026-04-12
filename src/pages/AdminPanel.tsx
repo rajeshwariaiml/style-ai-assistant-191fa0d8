@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Plus, Pencil, Trash2, Loader2, ShieldCheck } from "lucide-react";
+import { Plus, Pencil, Trash2, Loader2, ShieldCheck, ShieldAlert } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
@@ -32,10 +32,31 @@ const AdminPanel = () => {
   const [form, setForm] = useState<SchemeForm>(emptyForm);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
   const { toast } = useToast();
   const navigate = useNavigate();
 
-  useEffect(() => { loadSchemes(); }, []);
+  useEffect(() => {
+    const checkAccess = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) { navigate("/login"); return; }
+
+      const { data: roles } = await supabase
+        .from("user_roles")
+        .select("role")
+        .eq("user_id", session.user.id)
+        .eq("role", "admin");
+
+      if (!roles || roles.length === 0) {
+        setIsAdmin(false);
+        setLoading(false);
+        return;
+      }
+      setIsAdmin(true);
+      loadSchemes();
+    };
+    checkAccess();
+  }, [navigate]);
 
   const loadSchemes = async () => {
     setLoading(true);
@@ -100,6 +121,23 @@ const AdminPanel = () => {
     if (error) toast({ title: "Error deleting", variant: "destructive" });
     else { toast({ title: "Scheme deleted" }); loadSchemes(); }
   };
+
+  if (isAdmin === false) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-1 pt-24 pb-16 px-4 flex items-center justify-center">
+          <div className="text-center space-y-4">
+            <ShieldAlert className="h-16 w-16 text-destructive mx-auto" />
+            <h1 className="font-display text-2xl font-bold">Access Denied</h1>
+            <p className="text-muted-foreground">You do not have admin privileges to access this panel.</p>
+            <Button onClick={() => navigate("/dashboard")}>Go to Dashboard</Button>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
