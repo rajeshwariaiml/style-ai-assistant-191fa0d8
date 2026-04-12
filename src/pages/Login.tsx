@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Shield } from "lucide-react";
+import { Shield, Loader2, LogIn } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
@@ -16,11 +16,32 @@ const Login = () => {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!email.trim() || !password.trim()) {
+      toast({ title: "Please fill in all fields", variant: "destructive" });
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast({ title: "Invalid email format", variant: "destructive" });
+      return;
+    }
     setLoading(true);
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
     setLoading(false);
-    if (error) toast({ title: "Login failed", description: error.message, variant: "destructive" });
-    else { toast({ title: "Welcome back!" }); navigate("/dashboard"); }
+
+    if (error) {
+      let description = error.message;
+      if (error.message.includes("Invalid login")) {
+        description = "Incorrect email or password. Please try again.";
+      } else if (error.message.includes("Email not confirmed")) {
+        description = "Your email is not verified yet. Please check your inbox.";
+      }
+      toast({ title: "Login Failed", description, variant: "destructive" });
+      return;
+    }
+
+    const name = data.user?.user_metadata?.full_name || data.user?.email?.split("@")[0] || "User";
+    toast({ title: `Welcome back, ${name}!`, description: "Redirecting to your dashboard..." });
+    setTimeout(() => navigate("/dashboard"), 800);
   };
 
   return (
@@ -45,8 +66,20 @@ const Login = () => {
             <Label htmlFor="password">Password</Label>
             <Input id="password" type="password" placeholder="••••••••" value={password} onChange={e => setPassword(e.target.value)} required />
           </div>
-          <Button type="submit" disabled={loading} className="w-full">{loading ? "Signing in..." : "Sign In"}</Button>
+          <Button type="submit" disabled={loading} className="w-full gap-2">
+            {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <LogIn className="h-4 w-4" />}
+            {loading ? "Signing in..." : "Sign In"}
+          </Button>
         </form>
+
+        <div className="mt-4 p-3 bg-muted/50 rounded-lg border border-border">
+          <p className="text-xs text-muted-foreground text-center font-medium mb-1">Demo Accounts</p>
+          <div className="text-xs text-muted-foreground space-y-0.5">
+            <p><strong>Admin:</strong> admin@yojanamitra.ai / Admin@123</p>
+            <p><strong>User:</strong> demo@yojanamitra.ai / Demo@123</p>
+          </div>
+        </div>
+
         <p className="text-center text-sm text-muted-foreground mt-6">
           Don't have an account? <Link to="/signup" className="text-primary font-medium hover:underline">Sign Up</Link>
         </p>
