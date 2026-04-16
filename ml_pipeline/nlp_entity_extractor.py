@@ -139,10 +139,9 @@ class NLPEntityExtractor:
             match = re.search(pattern, text)
             if match:
                 val = match.group(1).replace(",", "")
-                if i == 2:  # lakhs
+                if i == 0:  # lakhs pattern
                     return int(float(val) * 100000)
                 num = int(float(val))
-                # Heuristic: if < 100000 and mentions "month", multiply by 12
                 if num < 100000 and "month" in text:
                     return num * 12
                 return num
