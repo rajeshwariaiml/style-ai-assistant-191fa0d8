@@ -45,13 +45,13 @@ EDUCATION_LEVELS = {
 }
 
 GENDER_KEYWORDS = {
-    "Male": ["male", "man", "boy", "he ", "son", "father", "husband"],
-    "Female": ["female", "woman", "girl", "she ", "daughter", "mother", "wife"],
+    "Female": ["female", "woman", "girl", "daughter", "mother", "wife"],
+    "Male": ["male", "man ", "boy", "son ", "father", "husband"],
 }
 
 CATEGORY_KEYWORDS = {
-    "SC": ["sc", "scheduled caste", "dalit"],
-    "ST": ["st", "scheduled tribe", "tribal", "adivasi"],
+    "SC": ["scheduled caste", "dalit", " sc "],
+    "ST": ["scheduled tribe", "tribal", "adivasi", " st "],
     "OBC": ["obc", "other backward class", "backward class"],
     "General": ["general", "unreserved", "open category"],
     "Minority": ["minority", "muslim", "christian", "sikh", "buddhist", "jain", "parsi"],
