@@ -131,9 +131,9 @@ class NLPEntityExtractor:
     def _extract_income(self, text: str) -> Optional[int]:
         """Extract annual income from text. Handles lakhs/thousands notation."""
         patterns = [
+            r'(\d+\.?\d*)\s*(?:lakh|lac)',
             r'(?:income|earn|salary|earning)[^\d]*(\d[\d,]*)\s*(?:per\s*(?:month|annum|year))?',
             r'(\d[\d,]*)\s*(?:per\s*(?:month|annum|year))',
-            r'(?:income|earn|salary)[^\d]*(\d+\.?\d*)\s*(?:lakh|lac)',
         ]
         for i, pattern in enumerate(patterns):
             match = re.search(pattern, text)
