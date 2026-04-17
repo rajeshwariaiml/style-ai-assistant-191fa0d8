@@ -7673,5 +7673,1030 @@
     "ministry": "Ministry of Power",
     "state": "All India",
     "target_beneficiaries": "Unelectrified households"
+  },
+  {
+    "scheme_name": "National Bal Swachhta Mission",
+    "category": "Social Welfare",
+    "benefits": "Sanitation awareness for children",
+    "deadline": null,
+    "eligibility_rules": {
+      "max_age": 14
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Women & Child Development",
+    "state": "All India",
+    "target_beneficiaries": "Children"
+  },
+  {
+    "scheme_name": "Swachh Vidyalaya Initiative",
+    "category": "Education",
+    "benefits": "Toilets in every government school",
+    "deadline": null,
+    "eligibility_rules": {
+      "max_age": 18
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Education",
+    "state": "All India",
+    "target_beneficiaries": "School students"
+  },
+  {
+    "scheme_name": "Unnat Bharat Abhiyan",
+    "category": "Education",
+    "benefits": "Higher educational institutions adopt villages for development",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://unnatbharatabhiyan.gov.in",
+    "ministry": "Ministry of Education",
+    "state": "All India",
+    "target_beneficiaries": "Villages and HEIs"
+  },
+  {
+    "scheme_name": "GIAN - Global Initiative of Academic Networks",
+    "category": "Education",
+    "benefits": "International faculty teaching short courses in India",
+    "deadline": null,
+    "eligibility_rules": {
+      "education_level": "Postgraduate"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://gian.iitkgp.ac.in",
+    "ministry": "Ministry of Education",
+    "state": "All India",
+    "target_beneficiaries": "Higher education students & faculty"
+  },
+  {
+    "scheme_name": "SWAYAM MOOC Platform",
+    "category": "Education",
+    "benefits": "Free online courses from school to PG level",
+    "deadline": null,
+    "eligibility_rules": {
+      "min_age": 14
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://swayam.gov.in",
+    "ministry": "Ministry of Education",
+    "state": "All India",
+    "target_beneficiaries": "Learners of all ages"
+  },
+  {
+    "scheme_name": "SWAYAM Prabha DTH Channels",
+    "category": "Education",
+    "benefits": "32 DTH channels broadcasting educational content",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://www.swayamprabha.gov.in",
+    "ministry": "Ministry of Education",
+    "state": "All India",
+    "target_beneficiaries": "Students without internet"
+  },
+  {
+    "scheme_name": "DIKSHA Portal",
+    "category": "Education",
+    "benefits": "National digital infrastructure for school education",
+    "deadline": null,
+    "eligibility_rules": {
+      "max_age": 18
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://diksha.gov.in",
+    "ministry": "Ministry of Education",
+    "state": "All India",
+    "target_beneficiaries": "Teachers & students"
+  },
+  {
+    "scheme_name": "PM eVidya - One Class One Channel",
+    "category": "Education",
+    "benefits": "TV broadcast for class 1-12 in regional languages",
+    "deadline": null,
+    "eligibility_rules": {
+      "max_age": 18
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Education",
+    "state": "All India",
+    "target_beneficiaries": "School students"
+  },
+  {
+    "scheme_name": "National Digital Library of India",
+    "category": "Education",
+    "benefits": "Free access to millions of digital books and resources",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://ndl.iitkgp.ac.in",
+    "ministry": "Ministry of Education",
+    "state": "All India",
+    "target_beneficiaries": "Students, researchers, citizens"
+  },
+  {
+    "scheme_name": "Study in India Programme",
+    "category": "Education",
+    "benefits": "Promoting India as global education hub for foreign students",
+    "deadline": null,
+    "eligibility_rules": {
+      "education_level": "12th Pass"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://studyinindia.gov.in",
+    "ministry": "Ministry of Education",
+    "state": "All India",
+    "target_beneficiaries": "Foreign students"
+  },
+  {
+    "scheme_name": "National Initiative for Proficiency in Reading",
+    "category": "Education",
+    "benefits": "Foundational reading skills programme",
+    "deadline": null,
+    "eligibility_rules": {
+      "max_age": 10
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Education",
+    "state": "All India",
+    "target_beneficiaries": "Primary school children"
+  },
+  {
+    "scheme_name": "Vidyanjali Programme",
+    "category": "Education",
+    "benefits": "Volunteer engagement in government schools",
+    "deadline": null,
+    "eligibility_rules": {
+      "min_age": 18
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://vidyanjali.education.gov.in",
+    "ministry": "Ministry of Education",
+    "state": "All India",
+    "target_beneficiaries": "School volunteers"
+  },
+  {
+    "scheme_name": "National Digital Education Architecture",
+    "category": "Education",
+    "benefits": "Digital infrastructure for education ecosystem",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Education",
+    "state": "All India",
+    "target_beneficiaries": "All learners"
+  },
+  {
+    "scheme_name": "Samagra Shiksha - Inclusive Education for Disabled",
+    "category": "Education",
+    "benefits": "Free education and aids to children with special needs",
+    "deadline": null,
+    "eligibility_rules": {
+      "max_age": 18
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Education",
+    "state": "All India",
+    "target_beneficiaries": "CWSN students"
+  },
+  {
+    "scheme_name": "Rashtriya Avishkar Abhiyan",
+    "category": "Education",
+    "benefits": "Promoting science, math & technology in schools",
+    "deadline": null,
+    "eligibility_rules": {
+      "max_age": 18
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Education",
+    "state": "All India",
+    "target_beneficiaries": "Class 6-10 students"
+  },
+  {
+    "scheme_name": "Manodarpan Initiative",
+    "category": "Healthcare",
+    "benefits": "Psychosocial support for students through helpline",
+    "deadline": null,
+    "eligibility_rules": {
+      "max_age": 25
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://manodarpan.education.gov.in",
+    "ministry": "Ministry of Education",
+    "state": "All India",
+    "target_beneficiaries": "Students, teachers, families"
+  },
+  {
+    "scheme_name": "National Means cum Merit Scholarship - State Quota",
+    "category": "Education",
+    "benefits": "Top-up scholarships through state nodal agencies",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "student",
+      "income_limit": 350000
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Education",
+    "state": "All India",
+    "target_beneficiaries": "Class 9-12 students"
+  },
+  {
+    "scheme_name": "Pre-Matric Scholarship for Children of Manual Scavengers",
+    "category": "Education",
+    "benefits": "Scholarship to children of those engaged in unclean occupations",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "student",
+      "max_age": 16
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Social Justice & Empowerment",
+    "state": "All India",
+    "target_beneficiaries": "Children of safai karamcharis"
+  },
+  {
+    "scheme_name": "Hostels for OBC Boys & Girls",
+    "category": "Education",
+    "benefits": "Construction of hostels for OBC students",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "student"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Social Justice & Empowerment",
+    "state": "All India",
+    "target_beneficiaries": "OBC students"
+  },
+  {
+    "scheme_name": "Hostels for ST Boys & Girls",
+    "category": "Education",
+    "benefits": "Hostel facilities for ST students near schools/colleges",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "student"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Tribal Affairs",
+    "state": "All India",
+    "target_beneficiaries": "ST students"
+  },
+  {
+    "scheme_name": "Vocational Training Centres for Tribal Youth",
+    "category": "Skill Development",
+    "benefits": "Skill training in 90+ trades for ST youth",
+    "deadline": null,
+    "eligibility_rules": {
+      "min_age": 14,
+      "max_age": 35
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Tribal Affairs",
+    "state": "All India",
+    "target_beneficiaries": "ST youth"
+  },
+  {
+    "scheme_name": "Tribal Sub Plan",
+    "category": "Social Welfare",
+    "benefits": "Earmarked funds across ministries for tribal development",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Tribal Affairs",
+    "state": "All India",
+    "target_beneficiaries": "Scheduled Tribes"
+  },
+  {
+    "scheme_name": "Particularly Vulnerable Tribal Groups Development",
+    "category": "Social Welfare",
+    "benefits": "Special focus on PVTGs across 18 states",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Tribal Affairs",
+    "state": "All India",
+    "target_beneficiaries": "PVTG households"
+  },
+  {
+    "scheme_name": "Forest Rights Act Implementation",
+    "category": "Social Welfare",
+    "benefits": "Recognition of individual & community forest rights",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://tribal.nic.in",
+    "ministry": "Ministry of Tribal Affairs",
+    "state": "All India",
+    "target_beneficiaries": "Tribal & forest dwelling communities"
+  },
+  {
+    "scheme_name": "Minimum Support Price for Minor Forest Produce",
+    "category": "Agriculture",
+    "benefits": "MSP for 87 minor forest produce items",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "farmer"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://trifed.tribal.gov.in",
+    "ministry": "Ministry of Tribal Affairs",
+    "state": "All India",
+    "target_beneficiaries": "Tribal gatherers"
+  },
+  {
+    "scheme_name": "Van Dhan Vikas Yojana",
+    "category": "Employment",
+    "benefits": "Value addition centres for tribal forest produce",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "entrepreneur"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://trifed.tribal.gov.in",
+    "ministry": "Ministry of Tribal Affairs",
+    "state": "All India",
+    "target_beneficiaries": "Tribal entrepreneurs"
+  },
+  {
+    "scheme_name": "Tribes India Marketing",
+    "category": "Employment",
+    "benefits": "E-commerce platform for tribal products",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "entrepreneur"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://www.tribesindia.com",
+    "ministry": "Ministry of Tribal Affairs",
+    "state": "All India",
+    "target_beneficiaries": "Tribal artisans"
+  },
+  {
+    "scheme_name": "Special Central Assistance to Tribal Sub Plan",
+    "category": "Social Welfare",
+    "benefits": "Family-oriented income generation for tribals",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Tribal Affairs",
+    "state": "All India",
+    "target_beneficiaries": "Tribal families"
+  },
+  {
+    "scheme_name": "Pradhan Mantri Van Dhan Yojana",
+    "category": "Agriculture",
+    "benefits": "Setting up VDVKs for tribal product processing",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "farmer"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Tribal Affairs",
+    "state": "All India",
+    "target_beneficiaries": "Tribal collectors"
+  },
+  {
+    "scheme_name": "Aspirational Districts - Tribal Focus",
+    "category": "Social Welfare",
+    "benefits": "Convergent action in tribal majority aspirational districts",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "NITI Aayog",
+    "state": "All India",
+    "target_beneficiaries": "Tribal residents"
+  },
+  {
+    "scheme_name": "Pre-Matric Scholarship for ST Students",
+    "category": "Education",
+    "benefits": "Scholarship for ST students class 9-10",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "student",
+      "income_limit": 250000,
+      "max_age": 16
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://scholarships.gov.in",
+    "ministry": "Ministry of Tribal Affairs",
+    "state": "All India",
+    "target_beneficiaries": "ST students class 9-10"
+  },
+  {
+    "scheme_name": "Post-Matric Scholarship for ST Students",
+    "category": "Education",
+    "benefits": "Scholarship for ST students above class 10",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "student",
+      "income_limit": 250000,
+      "education_level": "10th Pass"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://scholarships.gov.in",
+    "ministry": "Ministry of Tribal Affairs",
+    "state": "All India",
+    "target_beneficiaries": "ST students post matric"
+  },
+  {
+    "scheme_name": "Post-Matric Scholarship for SC Students",
+    "category": "Education",
+    "benefits": "Scholarship for SC students above class 10",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "student",
+      "income_limit": 250000,
+      "education_level": "10th Pass"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://scholarships.gov.in",
+    "ministry": "Ministry of Social Justice & Empowerment",
+    "state": "All India",
+    "target_beneficiaries": "SC students post matric"
+  },
+  {
+    "scheme_name": "Post-Matric Scholarship for OBC Students",
+    "category": "Education",
+    "benefits": "Scholarship for OBC students above class 10",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "student",
+      "income_limit": 150000,
+      "education_level": "10th Pass"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://scholarships.gov.in",
+    "ministry": "Ministry of Social Justice & Empowerment",
+    "state": "All India",
+    "target_beneficiaries": "OBC students post matric"
+  },
+  {
+    "scheme_name": "Pre-Matric Scholarship for OBC Students",
+    "category": "Education",
+    "benefits": "Scholarship for OBC students class 1-10",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "student",
+      "income_limit": 250000,
+      "max_age": 16
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://scholarships.gov.in",
+    "ministry": "Ministry of Social Justice & Empowerment",
+    "state": "All India",
+    "target_beneficiaries": "OBC students class 1-10"
+  },
+  {
+    "scheme_name": "Pre-Matric Scholarship for SC Students",
+    "category": "Education",
+    "benefits": "Scholarship for SC students class 9-10",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "student",
+      "income_limit": 250000,
+      "max_age": 16
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://scholarships.gov.in",
+    "ministry": "Ministry of Social Justice & Empowerment",
+    "state": "All India",
+    "target_beneficiaries": "SC students class 9-10"
+  },
+  {
+    "scheme_name": "Babu Jagjivan Ram Chhatravas Yojana",
+    "category": "Education",
+    "benefits": "Hostels for SC boys and girls",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "student"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Social Justice & Empowerment",
+    "state": "All India",
+    "target_beneficiaries": "SC students"
+  },
+  {
+    "scheme_name": "Dr. Ambedkar Scheme of Interest Subsidy",
+    "category": "Education",
+    "benefits": "Interest subsidy on education loans for OBC/EBC students for overseas study",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "student",
+      "income_limit": 800000,
+      "education_level": "Graduate"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Social Justice & Empowerment",
+    "state": "All India",
+    "target_beneficiaries": "OBC/EBC students abroad"
+  },
+  {
+    "scheme_name": "National Overseas Scholarship for ST",
+    "category": "Education",
+    "benefits": "Financial support for ST students for higher studies abroad",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "student",
+      "income_limit": 600000,
+      "education_level": "Postgraduate"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Tribal Affairs",
+    "state": "All India",
+    "target_beneficiaries": "ST students abroad"
+  },
+  {
+    "scheme_name": "Stand Up India - SC/ST",
+    "category": "Employment",
+    "benefits": "Bank loans ₹10 lakh-₹1 crore for SC/ST entrepreneurs",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "entrepreneur",
+      "min_age": 18
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://www.standupmitra.in",
+    "ministry": "Ministry of Finance",
+    "state": "All India",
+    "target_beneficiaries": "SC/ST entrepreneurs"
+  },
+  {
+    "scheme_name": "Venture Capital Fund for SC Entrepreneurs",
+    "category": "Employment",
+    "benefits": "Equity funding for SC entrepreneurs",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "entrepreneur",
+      "min_age": 18
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Social Justice & Empowerment",
+    "state": "All India",
+    "target_beneficiaries": "SC entrepreneurs"
+  },
+  {
+    "scheme_name": "Venture Capital Fund for ST Entrepreneurs",
+    "category": "Employment",
+    "benefits": "Equity funding for ST entrepreneurs",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "entrepreneur",
+      "min_age": 18
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Tribal Affairs",
+    "state": "All India",
+    "target_beneficiaries": "ST entrepreneurs"
+  },
+  {
+    "scheme_name": "PM Mitra Bharat - Migrant Workers Database",
+    "category": "Social Welfare",
+    "benefits": "Welfare schemes for inter-state migrant workers",
+    "deadline": null,
+    "eligibility_rules": {
+      "min_age": 18,
+      "occupation": "laborer"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Labour & Employment",
+    "state": "All India",
+    "target_beneficiaries": "Migrant workers"
+  },
+  {
+    "scheme_name": "National Career Service Centres for SC/ST",
+    "category": "Employment",
+    "benefits": "Special career counseling and placement for SC/ST",
+    "deadline": null,
+    "eligibility_rules": {
+      "min_age": 18
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Labour & Employment",
+    "state": "All India",
+    "target_beneficiaries": "SC/ST job seekers"
+  },
+  {
+    "scheme_name": "National Career Service for Differently Abled",
+    "category": "Employment",
+    "benefits": "Vocational rehabilitation centres for PwDs",
+    "deadline": null,
+    "eligibility_rules": {
+      "min_age": 18
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Labour & Employment",
+    "state": "All India",
+    "target_beneficiaries": "Persons with disabilities"
+  },
+  {
+    "scheme_name": "Model Career Centres",
+    "category": "Employment",
+    "benefits": "Modernized employment exchanges with placement services",
+    "deadline": null,
+    "eligibility_rules": {
+      "min_age": 14
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://www.ncs.gov.in",
+    "ministry": "Ministry of Labour & Employment",
+    "state": "All India",
+    "target_beneficiaries": "Job seekers"
+  },
+  {
+    "scheme_name": "Industrial Training Institutes Upgradation",
+    "category": "Skill Development",
+    "benefits": "Upgrading govt ITIs to centres of excellence",
+    "deadline": null,
+    "eligibility_rules": {
+      "min_age": 14,
+      "education_level": "10th Pass"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Skill Development & Entrepreneurship",
+    "state": "All India",
+    "target_beneficiaries": "ITI students"
+  },
+  {
+    "scheme_name": "Pradhan Mantri Daksh Aur Kushal Sampann Hitgrahi Yojana",
+    "category": "Skill Development",
+    "benefits": "Free skill training for marginalized communities",
+    "deadline": null,
+    "eligibility_rules": {
+      "min_age": 18,
+      "max_age": 45
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://pmdaksh.dosje.gov.in",
+    "ministry": "Ministry of Social Justice & Empowerment",
+    "state": "All India",
+    "target_beneficiaries": "Marginalized youth"
+  },
+  {
+    "scheme_name": "North East Special Infrastructure Development",
+    "category": "Housing",
+    "benefits": "Infrastructure development in North Eastern Region",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Development of North Eastern Region",
+    "state": "All India",
+    "target_beneficiaries": "NER residents"
+  },
+  {
+    "scheme_name": "North East Venture Fund",
+    "category": "Employment",
+    "benefits": "Equity capital for startups in North East",
+    "deadline": null,
+    "eligibility_rules": {
+      "occupation": "entrepreneur"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of DoNER",
+    "state": "All India",
+    "target_beneficiaries": "NER entrepreneurs"
+  },
+  {
+    "scheme_name": "Hill Area Development Programme",
+    "category": "Social Welfare",
+    "benefits": "Special development support for hill regions",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Rural Development",
+    "state": "All India",
+    "target_beneficiaries": "Hill area residents"
+  },
+  {
+    "scheme_name": "Backward Regions Grant Fund",
+    "category": "Social Welfare",
+    "benefits": "Untied funds for backward districts",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Panchayati Raj",
+    "state": "All India",
+    "target_beneficiaries": "Backward district residents"
+  },
+  {
+    "scheme_name": "National Rurban Mission",
+    "category": "Housing",
+    "benefits": "Cluster-based development of rural areas with urban facilities",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://rurban.gov.in",
+    "ministry": "Ministry of Rural Development",
+    "state": "All India",
+    "target_beneficiaries": "Rural cluster residents"
+  },
+  {
+    "scheme_name": "Mission Antyodaya",
+    "category": "Social Welfare",
+    "benefits": "Convergent rural development at gram panchayat level",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Rural Development",
+    "state": "All India",
+    "target_beneficiaries": "Rural households"
+  },
+  {
+    "scheme_name": "Pradhan Mantri Jan Vikas - Minority Areas",
+    "category": "Social Welfare",
+    "benefits": "Infrastructure in minority concentration blocks/towns",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Minority Affairs",
+    "state": "All India",
+    "target_beneficiaries": "Minority area residents"
+  },
+  {
+    "scheme_name": "Multi-Sectoral Development Programme - Minorities",
+    "category": "Social Welfare",
+    "benefits": "Targeted development in minority concentration districts",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Minority Affairs",
+    "state": "All India",
+    "target_beneficiaries": "Minority concentration districts"
+  },
+  {
+    "scheme_name": "Hamari Dharohar - Minority Heritage",
+    "category": "Social Welfare",
+    "benefits": "Preservation of minority cultural heritage",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Minority Affairs",
+    "state": "All India",
+    "target_beneficiaries": "Minority communities"
+  },
+  {
+    "scheme_name": "Jiyo Parsi Scheme",
+    "category": "Women & Child Development",
+    "benefits": "Financial support to Parsi couples for child birth",
+    "deadline": null,
+    "eligibility_rules": {
+      "min_age": 21
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://jiyoparsi.org",
+    "ministry": "Ministry of Minority Affairs",
+    "state": "All India",
+    "target_beneficiaries": "Parsi families"
+  },
+  {
+    "scheme_name": "National Minorities Development & Finance Corporation Loans",
+    "category": "Employment",
+    "benefits": "Concessional loans for self-employment of minorities",
+    "deadline": null,
+    "eligibility_rules": {
+      "min_age": 18,
+      "occupation": "entrepreneur"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://nmdfc.org",
+    "ministry": "Ministry of Minority Affairs",
+    "state": "All India",
+    "target_beneficiaries": "Minority entrepreneurs"
+  },
+  {
+    "scheme_name": "Cyber Crime Prevention against Women & Children",
+    "category": "Women & Child Development",
+    "benefits": "Comprehensive cyber crime prevention scheme",
+    "deadline": null,
+    "eligibility_rules": {
+      "max_age": 60,
+      "gender": "Female"
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": "https://cybercrime.gov.in",
+    "ministry": "Ministry of Home Affairs",
+    "state": "All India",
+    "target_beneficiaries": "Women and children online"
+  },
+  {
+    "scheme_name": "Emergency Response Support System 112",
+    "category": "Social Welfare",
+    "benefits": "Single emergency number 112 across India",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Home Affairs",
+    "state": "All India",
+    "target_beneficiaries": "All citizens"
+  },
+  {
+    "scheme_name": "Crime & Criminal Tracking Network System",
+    "category": "Social Welfare",
+    "benefits": "Online criminal records and citizen services",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Home Affairs",
+    "state": "All India",
+    "target_beneficiaries": "All citizens"
+  },
+  {
+    "scheme_name": "Modernisation of Police Force",
+    "category": "Social Welfare",
+    "benefits": "Modernization of state police forces",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Home Affairs",
+    "state": "All India",
+    "target_beneficiaries": "Police forces and citizens"
+  },
+  {
+    "scheme_name": "Police Welfare Schemes",
+    "category": "Social Welfare",
+    "benefits": "Health, housing, education welfare for police personnel",
+    "deadline": null,
+    "eligibility_rules": {},
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Home Affairs",
+    "state": "All India",
+    "target_beneficiaries": "Police personnel"
+  },
+  {
+    "scheme_name": "Civil Defence Volunteer Programme",
+    "category": "Skill Development",
+    "benefits": "Training citizens in civil defence",
+    "deadline": null,
+    "eligibility_rules": {
+      "min_age": 18
+    },
+    "application_start_date": null,
+    "reminder_days_before_deadline": 7,
+    "is_deadline_rolling": true,
+    "official_application_link": null,
+    "ministry": "Ministry of Home Affairs",
+    "state": "All India",
+    "target_beneficiaries": "Civil volunteers"
   }
 ]
