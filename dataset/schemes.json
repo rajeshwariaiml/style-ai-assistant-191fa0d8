@@ -1,0 +1,91 @@
+[
+  {
+    "scheme_name": "PM Kisan Samman Nidhi",
+    "category": "Agriculture",
+    "benefits": "₹6,000 per year direct benefit transfer to farmer families",
+    "deadline": "2026-12-31",
+    "eligibility_rules": {
+      "occupation": "farmer",
+      "income_limit": 200000,
+      "min_age": 18,
+      "max_age": 70
+    }
+  },
+  {
+    "scheme_name": "Ayushman Bharat - PM Jan Arogya Yojana",
+    "category": "Healthcare",
+    "benefits": "₹5 lakh health insurance coverage per family per year",
+    "deadline": null,
+    "eligibility_rules": {
+      "income_limit": 300000
+    }
+  },
+  {
+    "scheme_name": "PM Awas Yojana (Urban)",
+    "category": "Housing",
+    "benefits": "₹2.67 lakh subsidy for housing construction",
+    "deadline": "2026-06-30",
+    "eligibility_rules": {
+      "income_limit": 300000,
+      "min_age": 21,
+      "max_age": 65
+    }
+  },
+  {
+    "scheme_name": "National Scholarship Portal - Post Matric",
+    "category": "Education",
+    "benefits": "Full tuition fee + maintenance allowance up to ₹20,000/year",
+    "deadline": "2026-04-22",
+    "eligibility_rules": {
+      "occupation": "student",
+      "income_limit": 250000,
+      "min_age": 16,
+      "max_age": 35,
+      "education_level": "12th Pass"
+    }
+  },
+  {
+    "scheme_name": "Mudra Yojana (Shishu)",
+    "category": "Employment",
+    "benefits": "Collateral-free loan up to ₹50,000 for micro enterprises",
+    "deadline": "2026-04-17",
+    "eligibility_rules": {
+      "occupation": "entrepreneur",
+      "min_age": 18,
+      "max_age": 65
+    }
+  },
+  {
+    "scheme_name": "Beti Bachao Beti Padhao",
+    "category": "Women & Child Development",
+    "benefits": "Education support, welfare programs, and Sukanya Samriddhi account",
+    "deadline": null,
+    "eligibility_rules": {
+      "gender": "Female",
+      "max_age": 25
+    }
+  },
+  {
+    "scheme_name": "PM Vishwakarma Yojana",
+    "category": "Skill Development",
+    "benefits": "₹3 lakh collateral-free loan + skill training + ₹500/day stipend",
+    "deadline": "2027-03-31",
+    "eligibility_rules": {
+      "occupation": "laborer",
+      "min_age": 18,
+      "max_age": 60
+    }
+  },
+  {
+    "scheme_name": "Karnataka Vidyasiri Scholarship",
+    "category": "Education",
+    "benefits": "₹15,000-₹30,000 per year scholarship",
+    "deadline": "2026-04-18",
+    "eligibility_rules": {
+      "occupation": "student",
+      "income_limit": 250000,
+      "state": "Karnataka",
+      "education_level": "12th Pass"
+    }
+  }
+]
