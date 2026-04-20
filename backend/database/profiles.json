@@ -10,5 +10,17 @@
     "occupation": "student",
     "category": "OBC",
     "education_level": "graduate"
+  },
+  {
+    "email": "tester@example.com",
+    "name": "Test",
+    "age": 25,
+    "gender": null,
+    "income": null,
+    "state": "Karnataka",
+    "district": null,
+    "occupation": null,
+    "category": null,
+    "education_level": null
   }
 ]
