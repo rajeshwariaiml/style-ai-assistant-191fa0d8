@@ -1,0 +1,26 @@
+[
+  {
+    "email": "demo@yojanamitra.ai",
+    "name": "Demo User",
+    "age": 24,
+    "gender": "female",
+    "income": 180000,
+    "state": "Karnataka",
+    "district": "Bengaluru Urban",
+    "occupation": "student",
+    "category": "OBC",
+    "education_level": "graduate"
+  },
+  {
+    "email": "tester@example.com",
+    "name": "Test",
+    "age": 25,
+    "gender": null,
+    "income": null,
+    "state": "Karnataka",
+    "district": null,
+    "occupation": null,
+    "category": null,
+    "education_level": null
+  }
+]
