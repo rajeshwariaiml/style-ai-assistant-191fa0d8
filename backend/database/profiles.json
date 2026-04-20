@@ -1,0 +1,14 @@
+[
+  {
+    "email": "demo@yojanamitra.ai",
+    "name": "Demo User",
+    "age": 24,
+    "gender": "female",
+    "income": 180000,
+    "state": "Karnataka",
+    "district": "Bengaluru Urban",
+    "occupation": "student",
+    "category": "OBC",
+    "education_level": "graduate"
+  }
+]
