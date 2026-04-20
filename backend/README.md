@@ -1,9 +1,14 @@
-# YojanaMitraAI – Backend (Deadline Notification Service)
+# YojanaMitraAI – Backend (FastAPI, Local)
 
-A lightweight **FastAPI** service that powers the **deadline alert system**
-for saved government schemes. It runs entirely locally and reads its data
-from JSON files in `/dataset` and `/backend/database`. The recommendation
-engine in `/ml_pipeline` is **not** touched.
+Standalone **FastAPI** service exposing authentication, profile
+management, deadline notifications, and ML-powered scheme recommendations.
+Runs entirely locally with **JSON file storage** — no Supabase / no cloud
+DB required for these endpoints.
+
+> The deployed React app continues to use Supabase. This backend is
+> provided as **academic source code** to demonstrate the same flows
+> running fully offline. Run it with `uvicorn` and call it from your
+> own scripts, Postman, or a local frontend build.
 
 ---
 
@@ -11,32 +16,48 @@ engine in `/ml_pipeline` is **not** touched.
 
 ```
 backend/
-├── main.py                       # FastAPI app entry point
+├── main.py                          # FastAPI app entry point
 ├── requirements.txt
-├── README.md                     # (this file)
-├── database/
-│   └── saved_schemes.json        # per-user saved schemes
+├── README.md                        # (this file)
+│
 ├── routes/
-│   └── notification_routes.py    # GET /notifications
+│   ├── auth_routes.py               # /signup, /login
+│   ├── profile_routes.py            # /save-profile, /get-profile
+│   ├── notification_routes.py       # /notifications
+│   └── recommend_routes.py          # /recommend-schemes
+│
 ├── controllers/
-│   └── notification_controller.py
-└── services/
-    └── notification_service.py   # core deadline logic
+│   ├── auth_controller.py
+│   ├── profile_controller.py
+│   ├── notification_controller.py
+│   └── recommend_controller.py
+│
+├── services/
+│   ├── notification_service.py      # deadline detection logic
+│   └── recommendation_service.py    # bridge to ml_pipeline
+│
+├── models/
+│   └── user_model.py                # Pydantic schemas
+│
+├── database/
+│   ├── users.json                   # name + email + bcrypt-style hash
+│   ├── profiles.json                # per-user profile records
+│   └── saved_schemes.json           # per-user saved schemes
+│
+└── utils/
+    └── password_hasher.py           # PBKDF2-SHA256 (stdlib only)
 ```
 
-Companion folders at the project root:
+Companion folders (unchanged):
 
 ```
-dataset/
-└── schemes.json                  # scheme_name, deadline, eligibility_rules, benefits, category
-ml_pipeline/                      # UNCHANGED — recommendation engine
-frontend/
-└── src/services/api.js           # JS client that calls /notifications
+dataset/schemes.json                 # 527 real schemes
+ml_pipeline/                         # ML recommendation engine — UNCHANGED
 ```
 
 ---
 
-## 2. Running locally
+## 2. Run locally
 
 ```bash
 cd backend
@@ -44,115 +65,148 @@ pip install -r requirements.txt
 uvicorn main:app --reload --port 8000
 ```
 
-Then open: http://localhost:8000/notifications
-
-Optional query param: `?user_email=demo@yojanamitra.ai`
-
----
-
-## 3. Deadline detection logic
-
-`services/notification_service.py` implements the entire pipeline:
-
-1. **Load schemes catalog** – first tries `dataset/schemes.json`, falls back to
-   `ml_pipeline/dataset/schemes_sample.json` so existing data is reused.
-2. **Load saved schemes** – reads `backend/database/saved_schemes.json`,
-   accepting either a single user record or a list of records.
-3. **Resolve deadline** – uses the deadline stored on the saved entry, or
-   looks it up in the schemes catalog by scheme name (case-insensitive).
-4. **Compute `days_remaining`** = `deadline − today` (in days).
-5. **Classify status:**
-
-   | days_remaining | status     |
-   |----------------|------------|
-   | `< 0`          | `expired`  |
-   | `= 0`          | `today`    |
-   | `1 – 7`        | `upcoming` |
-   | `> 7`          | `far`      |
+Open: http://localhost:8000  →  lists all endpoints.
+Interactive docs: http://localhost:8000/docs
 
 ---
 
-## 4. Notification generation logic
+## 3. API endpoints
 
-For every saved scheme with a parseable `YYYY-MM-DD` deadline, the service
-produces an alert object:
+| Method | Path                | Purpose                                     |
+|--------|---------------------|---------------------------------------------|
+| POST   | `/signup`           | Create a new local user (PBKDF2 hashed)     |
+| POST   | `/login`            | Verify credentials                          |
+| POST   | `/save-profile`     | Insert/update a profile in `profiles.json`  |
+| GET    | `/get-profile`      | Fetch a profile by `?email=...`             |
+| GET    | `/notifications`    | Deadline alerts for saved schemes           |
+| POST   | `/recommend-schemes`| Run the ML pipeline and return top-K        |
+
+### Authentication flow
+
+1. Frontend (or curl) `POST /signup` with `{ name, email, password }`.
+2. Controller hashes the password using `pbkdf2_sha256$120000$…` and
+   appends a record to `database/users.json`.
+3. `POST /login` looks up the email, verifies with constant-time
+   comparison, and returns `{ success, user: { name, email } }`.
+
+```bash
+curl -X POST http://localhost:8000/signup \
+  -H 'Content-Type: application/json' \
+  -d '{"name":"Demo","email":"demo@x.com","password":"Demo@123"}'
+
+curl -X POST http://localhost:8000/login \
+  -H 'Content-Type: application/json' \
+  -d '{"email":"demo@x.com","password":"Demo@123"}'
+```
+
+### Profile save / load flow
+
+`POST /save-profile` accepts:
 
 ```json
 {
-  "scheme_name": "PM Scholarship",
-  "deadline": "2026-05-01",
-  "status": "upcoming",
-  "days_remaining": 5,
-  "message": "Deadline for PM Scholarship is in 5 days",
-  "user_email": "demo@yojanamitra.ai"
+  "email": "demo@yojanamitra.ai",
+  "name": "Demo User",
+  "age": 24, "gender": "female",
+  "income": 180000,
+  "state": "Karnataka", "district": "Bengaluru Urban",
+  "occupation": "student", "category": "OBC",
+  "education_level": "graduate"
 }
 ```
 
-Message templates:
+The controller upserts on `email` (case-insensitive). `GET /get-profile?email=...`
+returns the same record or `404`.
 
-- `expired`  → "Deadline expired for <scheme> (N day(s) ago)"
-- `today`    → "Last date for <scheme> application is today"
-- `1 day`    → "Last date for <scheme> application is tomorrow"
-- `upcoming` → "Deadline for <scheme> is in N days"
-- `far`      → "Deadline for <scheme> is in N days"
+### Notification alert logic
 
-Alerts are sorted: **expired → today → upcoming → far**, and within each
-bucket by `days_remaining`.
+Implemented in `services/notification_service.py`:
 
----
-
-## 5. Saved schemes tracking
-
-`backend/database/saved_schemes.json` is the source of truth for which
-schemes a user has saved. Format:
-
-```json
-[
-  {
-    "user_email": "demo@yojanamitra.ai",
-    "saved_schemes": [
-      { "scheme_name": "PM Scholarship", "deadline": "2026-05-01" }
-    ]
-  }
-]
-```
-
-The `deadline` on each saved entry is optional — if missing, the service
-falls back to the deadline declared in `dataset/schemes.json`.
-
----
-
-## 6. Notification API usage
-
-### Endpoint
-
-```
-GET /notifications
-GET /notifications?user_email=<email>
-```
-
-### cURL
+1. Load schemes catalog from `dataset/schemes.json` (falls back to
+   `ml_pipeline/dataset/schemes_sample.json`).
+2. Load saved schemes from `database/saved_schemes.json`.
+3. For each saved scheme resolve a `YYYY-MM-DD` deadline (record
+   override → catalog lookup).
+4. Compute `days_remaining = deadline − today`.
+5. Classify: `expired (<0)`, `today (=0)`, `upcoming (1–7)`, `far (>7)`.
+6. Emit a sorted alert list (expired → today → upcoming → far).
 
 ```bash
-curl http://localhost:8000/notifications
 curl "http://localhost:8000/notifications?user_email=demo@yojanamitra.ai"
 ```
 
-### Frontend (`frontend/src/services/api.js`)
+### ML recommendation flow
 
-```js
-import { fetchNotifications } from "@/services/api";
+`POST /recommend-schemes` body:
 
-const alerts = await fetchNotifications("demo@yojanamitra.ai");
-// render `alerts` in the existing notification panel — UI unchanged
+```json
+{ "query": "I am a 24 year old female student in Karnataka",
+  "profile": null, "mode": "nlp", "top_k": 5 }
 ```
+
+`services/recommendation_service.py` lazily instantiates
+`ml_pipeline.recommendation_pipeline.RecommendationPipeline`, indexes
+all 527 schemes from `dataset/schemes.json`, and returns:
+
+```json
+{
+  "recommendations": [
+    {
+      "scheme_name": "National Scholarship Portal - Post Matric",
+      "match_percentage": 78.5,
+      "eligibility_status": "eligible",
+      "missing_criteria": [],
+      "explanation": "...",
+      "gap_analysis": { ... }
+    }
+  ],
+  "count": 5,
+  "mode": "nlp"
+}
+```
+
+The `ml_pipeline/` package is **not** modified by this backend.
 
 ---
 
-## 7. Guarantees
+## 4. Dataset loading process
 
-- ✅ Frontend UI / styling / routing unchanged
-- ✅ `ml_pipeline/` unchanged
-- ✅ No existing endpoints renamed or removed
-- ✅ Runs fully offline / locally — no Supabase or cloud DB needed for alerts
-- ✅ All source code is plain `.py` / `.json` for academic review
+| File                                   | Used by                          |
+|----------------------------------------|----------------------------------|
+| `dataset/schemes.json` (527 entries)   | notifications + recommendations  |
+| `ml_pipeline/dataset/schemes_sample.json` | fallback if main file missing  |
+| `backend/database/users.json`          | auth                             |
+| `backend/database/profiles.json`       | profile save/load                |
+| `backend/database/saved_schemes.json`  | deadline alerts                  |
+
+All reads/writes use plain `json.load` / `json.dump` for full academic
+visibility — no ORM, no migration tool.
+
+---
+
+## 5. Security note (academic scope)
+
+- Passwords are hashed with **PBKDF2-SHA256, 120 000 iterations, 16-byte
+  random salt** (Python stdlib only — no extra dependency).
+- No JWT / no session cookies — clients are expected to remember the
+  returned `user.email` and pass it on subsequent profile calls.
+- This backend is intended for local demonstration; for production
+  deployment use a real database and signed session tokens.
+
+---
+
+## 6. Verified behavior
+
+Smoke-tested in-process via `fastapi.testclient.TestClient`:
+
+```
+ROOT          → 200 OK, lists all 6 endpoints
+SIGNUP        → 200 OK
+SIGNUP (dup)  → 409 Conflict
+LOGIN (ok)    → 200 OK
+LOGIN (bad)   → 401 Unauthorized
+SAVE-PROFILE  → 200 OK, persisted to profiles.json
+GET-PROFILE   → 200 OK, returns saved record
+NOTIFICATIONS → 4 alerts for demo@yojanamitra.ai
+RECOMMEND     → 3 ranked schemes via ml_pipeline (527 indexed)
+```

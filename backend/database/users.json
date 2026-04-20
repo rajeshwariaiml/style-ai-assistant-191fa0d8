@@ -4,11 +4,5 @@
     "email": "demo@yojanamitra.ai",
     "password_hash": "pbkdf2_sha256$120000$0000000000000000000000000000000000$00",
     "created_at": "2026-04-01T00:00:00Z"
-  },
-  {
-    "name": "Test",
-    "email": "tester@example.com",
-    "password_hash": "pbkdf2_sha256$120000$2d7e6151f5fcfce047e7e45afa65edb6$ab4e195aabd53d511b94553f6c94ad4ed6befcb18223a9ce0fad49c7769a010f",
-    "created_at": "2026-04-20T05:11:46.425761+00:00"
   }
 ]
